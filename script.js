@@ -6,7 +6,8 @@ const domElements = {
 	spin: document.querySelector('.spin'),
 	imgF: document.querySelector('#f'),
 	imgM: document.querySelector('#m'),
-	imgU: document.querySelector('#u')
+	imgU: document.querySelector('#u'),
+	aud: document.querySelector('audio')
 };
 
 const breath = {
@@ -18,7 +19,6 @@ const breath = {
 breathAnim();
 
 domElements.theme.addEventListener('click', themeChange);
-// window.addEventListener('DOMContentLoaded', BreathAnim);
 
 function breathAnim() {
 	domElements.text.innerText = 'Breath In';
