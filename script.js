@@ -1,89 +1,84 @@
-const text = document.querySelector('.text');
-const circle = document.querySelector('#cont');
-const themeContainer = document.querySelector('.theme-container');
-const mainContainer = document.querySelector('.container');
-const conic = document.querySelector('#breathing-container');
-const inner = document.querySelector('.inner-container');
-const spin = document.querySelector('.spin');
-const imgF = document.querySelector('#f');
-const imgM = document.querySelector('#m');
-const imgU = document.querySelector('#u');
-const h3 = document.querySelector('.heading h3');
+const domElements = {
+	text: document.querySelector('span'),
+	theme: document.querySelector('.theme-container'),
+	mainContainer: document.querySelector('.container'),
+	breath: document.querySelector('#breathing-container'),
+	spin: document.querySelector('.spin'),
+	imgF: document.querySelector('#f'),
+	imgM: document.querySelector('#m'),
+	imgU: document.querySelector('#u')
+};
 
-const totalTime = 7500;
-const breathingTime = (totalTime / 5) * 2; // 3000
-const hold = totalTime / 5;
+const breath = {
+	totalTime: 7500,
+	breathingTime: (this.totalTime / 5) * 2, // 3000
+	hold: this.totalTime / 5
+};
 
-// breathAnim();
+breathAnim();
 
-themeContainer.addEventListener('click', themeChange);
+domElements.theme.addEventListener('click', themeChange);
 // window.addEventListener('DOMContentLoaded', BreathAnim);
 
-// function breathAnim() {
-// 	text.innerText = 'Breath In...';
+function breathAnim() {
+	domElements.text.innerText = 'Breath In';
+	if (domElements.breath.classList.contains('shrink')) {
+		domElements.breath.classList.remove('shrink');
+		domElements.breath.classList.add('grow');
+	} else {
+		domElements.breath.classList.add('grow');
+	}
+
+	setTimeout(() => {
+		domElements.text.innerText = 'Hold..';
+
+		setTimeout(() => {
+			domElements.text.innerText = 'Breath Out';
+			if (domElements.breath.classList.contains('grow')) {
+				domElements.breath.classList.remove('grow');
+				domElements.breath.classList.add('shrink');
+			} else {
+				domElements.breath.classList.add('shrink');
+			}
+		}, 1500);
+	}, 3000);
+}
+setInterval(breathAnim, 7500);
+
+// const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// (async function breathAnimation() {
+// 	text.innerText = 'Breathe In!';
 // 	circle.className = 'grow';
+// 	await wait(breathingTime);
 
-// 	setTimeout(() => {
-// 		text.innerText = 'Hold';
+// 	text.innerText = 'Hold';
+// 	await wait(hold);
 
-// 		setTimeout(() => {
-// 			text.innerText = 'Breath Out...';
-// 			circle.className = 'shrink';
-// 		}, hold);
-// 	}, breathingTime);
-// }
-// setInterval(breathAnim, totalTime);
+// 	text.innerText = 'Breathe Out!';
+// 	circle.className = 'shrink';
+// 	await wait(breathingTime);
 
-const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-(async function breathAnimation() {
-	text.innerText = 'Breathe In!';
-	circle.className = 'grow';
-	await wait(breathingTime);
-
-	text.innerText = 'Hold';
-	await wait(hold);
-
-	text.innerText = 'Breathe Out!';
-	circle.className = 'shrink';
-	await wait(breathingTime);
-
-	breathAnimation();
-})();
+// 	breathAnimation();
+// })();
 // breathAnimation();
 function themeChange(e) {
 	if (e.target.id === 'f') {
-		imgM.className = '';
-		imgU.className = '';
-		imgF.className = 'op';
-		conic.className = 'breathing-container fconic';
-		inner.style.background = '#000';
-		text.style.color = '#fff';
-		h3.style.color = '#fff';
-
-		// setInterval(BreathAnim, totalTime);
+		domElements.imgM.className = '';
+		domElements.imgU.className = '';
+		domElements.imgF.className = 'op';
 	}
 
 	if (e.target.id === 'm') {
-		imgF.className = '';
-		imgU.className = '';
-		imgM.className = 'op';
-		conic.className = 'breathing-container mconic';
-		inner.style.background = '#fff';
-		text.style.color = '#000';
-		h3.style.color = '#fff';
-		// setInterval(BreathAnim, totalTime);
+		domElements.imgF.className = '';
+		domElements.imgU.className = '';
+		domElements.imgM.className = 'op';
 	}
 
 	if (e.target.id === 'u') {
-		imgF.className = '';
-		imgM.className = '';
-		imgU.className = 'op';
-		conic.className = 'breathing-container uconic';
-		inner.style.background = '#000';
-		text.style.color = '#fff';
-		h3.style.color = '#fff';
-		// setInterval(BreathAnim, totalTime);
+		domElements.imgF.className = '';
+		domElements.imgM.className = '';
+		domElements.imgU.className = 'op';
 	}
 	e.preventDefault();
 }
