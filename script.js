@@ -30,7 +30,7 @@ function breathAnim() {
 	}
 
 	setTimeout(() => {
-		domElements.text.innerText = 'Hold..';
+		domElements.text.innerText = 'Hold';
 
 		setTimeout(() => {
 			domElements.text.innerText = 'Breath Out';
