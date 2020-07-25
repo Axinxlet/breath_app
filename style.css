@@ -183,6 +183,10 @@ span {
 	background: url('./img/underwater.jpg') no-repeat center center/cover;
 }
 
+.l {
+	background: url('./img/l.jpg') no-repeat center center/cover;
+}
+
 img {
 	opacity: 0;
 	position: absolute;
@@ -192,7 +196,10 @@ img {
 	width: 100%;
 	height: 100%;
 	z-index: -2;
-	transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.5s ease-in;
+}
+iframe {
+	display: none;
 }
 
 .shade {
@@ -222,10 +229,9 @@ img {
 		transform: translateX(-50%);
 	}
 	.heading h3 {
-		font-size: 1.6rem;
-		margin-top: -10px;
+		font-size: 1.3rem;
 		width: 100%;
-		bottom: 22%;
+		bottom: 20%;
 	}
 	.heading p {
 		position: absolute;
@@ -235,8 +241,8 @@ img {
 	}
 
 	.breathing-container {
-		width: 220px;
-		height: 220px;
+		width: 200px;
+		height: 200px;
 		position: absolute;
 	}
 	.theme-container {
@@ -247,12 +253,6 @@ img {
 		transform: translateX(-50%);
 	}
 	.spin {
-		height: 220px;
-	}
-	.text {
-		width: 350px;
-	}
-	span {
-		margin-left: 25px;
+		height: 200px;
 	}
 }

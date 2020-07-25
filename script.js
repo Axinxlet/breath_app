@@ -7,6 +7,7 @@ const domElements = {
 	imgF: document.querySelector('#f'),
 	imgM: document.querySelector('#m'),
 	imgU: document.querySelector('#u'),
+
 	aud: document.querySelector('audio')
 };
 
@@ -66,19 +67,23 @@ function themeChange(e) {
 	if (e.target.id === 'f') {
 		domElements.imgM.className = '';
 		domElements.imgU.className = '';
+
 		domElements.imgF.className = 'op';
 	}
 
 	if (e.target.id === 'm') {
 		domElements.imgF.className = '';
 		domElements.imgU.className = '';
-		domElements.imgM.className = 'op';
+
+		domElements.imgM.className = ' op';
 	}
 
 	if (e.target.id === 'u') {
 		domElements.imgF.className = '';
 		domElements.imgM.className = '';
-		domElements.imgU.className = 'op';
+
+		domElements.imgU.className = ' op';
 	}
+
 	e.preventDefault();
 }
