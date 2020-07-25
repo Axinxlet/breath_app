@@ -222,14 +222,14 @@ img {
 		transform: translateX(-50%);
 	}
 	.heading h3 {
-		font-size: 1.3rem;
+		font-size: 1.6rem;
 		margin-top: -10px;
 		width: 100%;
-		bottom: 21%;
+		bottom: 24%;
 	}
 	.heading p {
 		position: absolute;
-		bottom: 18%;
+		bottom: 21%;
 		width: 100%;
 		font-size: 0.7rem;
 	}
