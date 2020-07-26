@@ -46,6 +46,9 @@ function breathAnim() {
 }
 setInterval(breathAnim, 7500);
 
+window.addEventListener('DOMContentLoaded', function () {
+	domElements.aud.play();
+});
 // const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // (async function breathAnimation() {

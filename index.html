@@ -7,35 +7,43 @@
 		<title>Breathing App</title>
 	</head>
 	<body>
+		<!-- MAIN CONTAINER WRAPPER -->
 		<div class="container">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/1ZYbU82GVz4?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<img id="f" src="./img/forest.jpg" alt="forest" />
-			<img id="m"  class="op"  src="./img/mount.jpg" alt="mountain" />
-			<img id="u"src="./img/underwater.jpg" alt="underwater" />
+			<!-- AUDIO -->
+			<audio id="audioplayer" src="./audio.mp3" type="audio/mpeg" loop="loop"></audio>
 
+			<!-- BACKGROUND IMAGES -->
+			<img id="f" src="./img/forest.jpg" alt="forest" />
+			<img id="m" class="op" src="./img/mount.jpg" alt="mountain" />
+			<img id="u" src="./img/underwater.jpg" alt="underwater" />
+
+			<!-- DARK OVERLAY -->
 			<div class="shade"></div>
 
-			<div class="theme-container">
-				<div id="f" class="theme f"></div>
-				<div id="m" class="theme m"></div>
-				<div id="u" class="theme u"></div>
-				
-			</div>
-
+			<!-- MAIN HEADING -->
 			<div class="heading">
-				<h3>Breathing App</h3>
-				<p>Let the breathing heals you</p>
+				<!-- THEME CHANGING BUTTONS -->
+				<div class="theme-container">
+					<div id="f" class="theme f"></div>
+					<div id="m" class="theme m"></div>
+					<div id="u" class="theme u"></div>
+				</div>
+				<div class="main-text">
+					<h3>Breathing App</h3>
+					<p>Let the breathing heals you</p>
+				</div>
 			</div>
-			
-				<div class="breathing-container" id="breathing-container">
-					<div class="text">
-						<span class="heart-beat"></span>
-					</div>
 
-					<div class="spin">
-						<div class="spinner"></div>
-					</div>
+			<!-- BREATHING CIRCLE -->
+			<div class="breathing-container" id="breathing-container">
+				<!-- TEXT INSIDE THE CIRCLE -->
+				<div class="text">
+					<span class="heart-beat"></span>
+				</div>
 
+				<!-- SPINNER AROUND THE CIRCLE -->
+				<div class="spin">
+					<div class="spinner"></div>
 				</div>
 			</div>
 		</div>
